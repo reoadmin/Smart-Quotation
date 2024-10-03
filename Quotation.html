@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Quotation</title>
+    <!-- Add Favicon -->
+    <link rel="icon" href="paper.png" type="image/png"> <!-- Use .ico, .png, or .svg -->
+    <!-- Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="Quote.css">
+    <style>
+        /* Loading screen styles */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* High z-index to ensure it is on top */
+        }
+
+        .loading-message {
+            font-size: 24px;
+            font-family: 'Montserrat', sans-serif;
+            color: #0066cc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-message">Loading, please wait...</div>
+    </div>
+
+    <div class="container" style="display:none;"> <!-- Initially hidden -->
+        <h1>Smart Quotation</h1>
+
+        <!-- Panel 1: Client and Company Details -->
+        <div class="panel" id="panel1">
+            <div class="input-group">
+                <label for="clientName">Client Name</label>
+                <input type="text" id="clientName" placeholder="Enter Client Name" required>
+            </div>
+            <div class="input-group">
+                <label for="companyName">Company Name</label>
+                <input type="text" id="companyName" placeholder="Enter Company Name" required>
+            </div>
+            <button type="button" onclick="nextPanel(2)">Next</button>
+        </div>
+
+        <!-- Panel 2: Business Details and Service Description -->
+        <div class="panel" id="panel2" style="display:none;">
+            <div class="input-group">
+                <label for="businessDetails">Business Details</label>
+                <textarea id="businessDetails" placeholder="Enter Business Details" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="serviceDescription">Service Description</label>
+                <textarea id="serviceDescription" placeholder="Describe the Service" required></textarea>
+            </div>
+            <button type="button" onclick="nextPanel(1)">Previous</button>
+            <button type="button" onclick="nextPanel(3)">Next</button>
+        </div>
+
+        <!-- Panel 3: Pricing and Dates -->
+        <div class="panel" id="panel3" style="display:none;">
+            <div class="input-group">
+                <label for="price">Price (BWP)</label>
+                <input type="number" id="price" placeholder="Enter Price in BWP" required>
+            </div>
+            <div class="input-group">
+                <label for="quotationNumber">Quotation Number</label>
+                <input type="text" id="quotationNumber" placeholder="Enter Quotation Number" required>
+            </div>
+            <div class="input-group">
+                <label for="quoteExpiryDate">Quote Expiry Date</label>
+                <input type="date" id="quoteExpiryDate" required>
+            </div>
+            <div class="input-group">
+                <label for="quotationDate">Quotation Date</label>
+                <input type="date" id="quotationDate" required>
+            </div>
+            <button type="button" onclick="nextPanel(2)">Previous</button>
+            <button type="button" onclick="nextPanel(4)">Next</button>
+        </div>
+
+        <!-- Panel 4: Project Schedule, Terms, and Signature -->
+        <div class="panel" id="panel4" style="display:none;">
+            <div class="input-group">
+                <label for="projectSchedule">Project Schedule</label>
+                <textarea id="projectSchedule" placeholder="Enter Project Schedule" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="termsConditions">Terms and Conditions</label>
+                <textarea id="termsConditions" placeholder="Enter Terms and Conditions" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="termsPayment">Terms of Payment</label>
+                <textarea id="termsPayment" placeholder="Enter Terms of Payment" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="customerSignature">Customer Acceptance Signature</label>
+                <input type="text" id="customerSignature" placeholder="Enter Customer Signature" required>
+            </div>
+            <button type="button" onclick="nextPanel(3)">Previous</button>
+            <button type="button" onclick="nextPanel(5)">Next</button>
+        </div>
+
+        <!-- Panel 5: Email and Revisions -->
+        <div class="panel" id="panel5" style="display:none;">
+            <div class="input-group">
+                <label for="emailAddress">Email Address</label>
+                <input type="email" id="emailAddress" placeholder="Enter Email Address" required>
+            </div>
+            <div class="input-group">
+                <label for="revisions">Revisions</label>
+                <textarea id="revisions" placeholder="Enter Revisions" required></textarea>
+            </div>
+            <button type="button" onclick="nextPanel(4)">Previous</button>
+            <button type="button" onclick="generateQuotation()">Get Quotation</button>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="Quote.js"></script>
+
+    <script>
+        // Hide the loading screen and show the main content when the page is loaded
+        window.onload = function() {
+            document.getElementById('loadingScreen').style.display = 'none'; // Hide loading screen
+            document.querySelector('.container').style.display = 'block'; // Show main content
+        };
+    </script>
+</body>
+</html>

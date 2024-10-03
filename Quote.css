@@ -1,0 +1,170 @@
+/* Container styling */
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: auto;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* General input styling */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Panel buttons */
+button {
+  background-color: #e60000; /* Red color for primary buttons */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #b30000; /* Darker red on hover */
+}
+
+/* Previous button specific styling (if you want to differentiate) */
+.previous-button {
+  background-color: #0066cc; /* Blue color for the Previous button */
+}
+
+.previous-button:hover {
+  background-color: #005bb5; /* Darker blue on hover */
+}
+
+/* Quotation output table */
+.quote-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.quote-table th, .quote-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.quote-table th {
+  background-color: #f4f4f4;
+  font-weight: 700;
+}
+
+.quotation {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.quote-header h1 {
+  font-size: 36px;
+  font-weight: 900;
+  color: #0066cc;
+}
+
+.quote-header p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.quote-client-details,
+.quote-services,
+.quote-pricing,
+.quote-terms,
+.quote-signature {
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #444;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+strong {
+  color: #333;
+}
+
+.quote-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.quote-table th,
+.quote-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.quote-table th {
+  background-color: #f5f5f5;
+  font-weight: 700;
+}
+
+.quote-table td {
+  color: #333;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buttons button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.buttons button:hover {
+  background-color: #005bb5;
+}
